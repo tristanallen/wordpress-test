@@ -11,7 +11,7 @@ Do not worry if you are not familiar with them - this test does not test any spe
 
 Please add some level of commenting in your work to show your thought process.
 
-Fork this project on Github, then when you are done, please send us a link to the branch on your fork (for example https://github.com/xxxUSERNAMExxx/wordpress-test/tree/test-work). Please do not PR it back to the project, unless you want other people to see your attempt at the test...!
+Fork this project on Github, then when you are done, please send us a link to the branch on your fork where you have committed your work (for example https://github.com/xxxUSERNAMExxx/wordpress-test/tree/test-work). Please do not PR it back to the project, unless you want other people to see your attempt at the test...!
 
 ### Project Structure
 
@@ -19,7 +19,9 @@ For the sake of the test, everything will be done in the theme.
 
 - The main thing to know is that the theme is located in `web/app/themes/sage`.
 - The templates are all in `web/app/themes/sage/resources/views/`. They follow the wordpress naming conventions, but they have .blade.php at the end (which allows [blade templates](https://laravel.com/docs/5.8/blade) - again, blade templates are not a part of this test).
-- Sass files are located in `web/app/themes/sage/resources/views/` and are set up to use [Tailwind](https://tailwindcss.com/docs/what-is-tailwind/). For any styling in this test, you can use either Tailwind or your own CSS.
+- Sass files are located in `web/app/themes/sage/resources/assets/styles/` and are set up to use [Tailwind](https://tailwindcss.com/docs/what-is-tailwind/). For any styling in this test, you can use either Tailwind or your own CSS.
+- Javascript files are located in `web/app/themes/sage/resources/assets/scripts/`.
+- You can add any dependencies you want to `web/app/themes/sage/package.json`, or `web/app/themes/sage/composer.json`.
 
 ### Setup
 
@@ -32,10 +34,11 @@ For the sake of the test, everything will be done in the theme.
 
 - [ ] Add a new post type for "Recipes".
 - [ ] Link to the recpies index page from the Home Page template.
-- [ ] Show the latest three Recipes on the Home Page, or show a message if there are no recipes (the empty state).
+- [ ] Show the latest three Recipes on the Home Page, or show a message if there are no recipes (the empty state), listed horizontally on the page.
 - [ ] Allow people to post comments on the recipes.
-- [ ] Additionally, show the three most-commented-on recipes on the Home Page.
+- [ ] Additionally, show the three most-commented-on recipes on the Home Page, listed horizontally on the page.
 - [ ] Show the text "There are x recipes on the site" (where x is the number of published recipes)
 - [ ] Show the text "There are x recipes on the site with comments on" (where x is the number of published recipes with comments on)
+- [ ] Add a "load more" button to the list of "most commented on" recipes, that loads in the next three "most commented on" recipes below them.
 
 **PLEASE READ THIS**: Unless you really want to, please do not spend more than an hour on this - the goal is not to complete it, it is to get an idea as to how you approach problems, and structure your code.
