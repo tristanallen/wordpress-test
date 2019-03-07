@@ -130,3 +130,37 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+
+/**
+ * Custom 'Recipe' Post type
+ */
+add_action( 'init', function(){
+
+    register_post_type( 'recipe',
+        [
+            'labels' => [
+                'name' => __( 'Recipes' ),
+                'singular_name' => __( 'Recipe' )
+            ],
+            'description' => 'Recipes',
+            'public' => true,
+            'has_archive' => true,
+            'show_in_rest' => true,
+            'supports' => [ 'title','editor', 'comments' ]
+        ]
+    );
+} );
+
+
+/**
+ * Set commenting on as default setting for new recipe posts
+ */
+add_filter( 'wp_insert_post_data', function( $data ) {
+    
+    if( $data['post_type'] == 'recipe' ) {
+        $data['comment_status'] = 'open';
+    }
+
+    return $data;
+} );
